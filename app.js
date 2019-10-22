@@ -1,12 +1,14 @@
 // nodejs.org for documentation + npmjs.com for packages
-const validator = require('validator') // require installed package name
+// const validator = require('validator') // require installed package name
 const chalk = require('chalk')
 const getNotes = require('./notes.js')  // can be named anything you would like
 
-const msg = getNotes()
-console.log(msg)
+const command = process.argv[2]
 
-// console.log(validator.isURL('https//google.com'))
-console.log(chalk.blue.bold.inverse('Success'))
+console.log(process.argv)
 
-console.log(process.argv[2])
+if (command === 'add') {
+  console.log('Adding Notes!')
+} else if (command === 'remove') {
+  console.log('Remove Notes!')
+}
