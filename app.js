@@ -1,14 +1,46 @@
 // nodejs.org for documentation + npmjs.com for packages
 // const validator = require('validator') // require installed package name
 const chalk = require('chalk')
+const yargs = require('yargs')
 const getNotes = require('./notes.js')  // can be named anything you would like
 
-const command = process.argv[2]
+//Customize yargs version
+yargs.version('1.1.0')
 
-console.log(process.argv)
+//Create add command
+yargs.command({
+  command: 'add',
+  describe: 'Add a new note',
+  handler: function () {
+    console.log('Adding a new note!')
+  }
+})
 
-if (command === 'add') {
-  console.log('Adding Notes!')
-} else if (command === 'remove') {
-  console.log('Remove Notes!')
-}
+//Create remove command
+yargs.command({
+  command: 'remove',
+  describe: 'Remove a note',
+  handler: function () {
+    console.log('Removing the note!')
+  }
+})
+
+// Create list command
+yargs.command({
+  command: 'list',
+  describe: 'list your note',
+  handler: function () {
+    console.log('Listing all notes!')
+  }
+})
+
+// Create read command
+yargs.command({
+  command: 'read',
+  describe: 'Read a note',
+  handler: function () {
+    console.log('Reading the note!')
+  }
+})
+
+console.log(yargs.argv)
