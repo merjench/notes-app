@@ -1,6 +1,6 @@
 // nodejs.org documentation
-const fs = require('fs') // store it in fs varibale, can be called anything you want
+const getNotes = require('./notes.js')  // can be named anything you would like
 
-// fs.writeFileSync('notes.txt', 'Updated this message second time')
+const msg = getNotes()
 
-fs.appendFileSync('notes.txt', ' I live in NYC')
+console.log(msg)
