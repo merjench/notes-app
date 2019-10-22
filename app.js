@@ -7,4 +7,6 @@ const msg = getNotes()
 console.log(msg)
 
 // console.log(validator.isURL('https//google.com'))
-console.log(chalk.green('Success'))
+console.log(chalk.blue.bold.inverse('Success'))
+
+console.log(process.argv[2])
