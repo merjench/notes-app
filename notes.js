@@ -8,12 +8,13 @@ const getNotes = () => {
 const addNote = (title, body) => {
     const notes = loadNotes()
     //refactored version below
-    const duplicateNotes = notes.filter((note) => note.title === title)
+    // const duplicateNotes = notes.filter((note) => note.title === title)  // this one filters all the notes
+    const duplicateNote = notes.find((note) => note.title === title)  // this will find the first note with same title
     // const duplicateNotes = notes.filter(function (note) {
     //     return note.title === title
     // })
 
-    if (duplicateNotes.length === 0) {
+    if (!duplicateNote) {
         notes.push({
             title: title,
             body: body
